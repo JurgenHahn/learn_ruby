@@ -1,27 +1,24 @@
 def translate(s)
-  # sentence = s.split(" ")
 
-  # sentence.each do |word|
-    word = s.split(//)
+     word = s.split(//)
       case
-        when vowel(word[0]) == true then word = word << "ay"
-        when vowel(word[0]) != true && vowel(s[1]) != true then word = (word.rotate!).rotate! << "ay"
-        when vowel(word[0]) != true then word = word.rotate! << "ay"
+        when is_vowel?(word[0]) == false && word[1] == "q" && word[2] == "u" then word = word.rotate!.rotate!.rotate! << "ay"
+        when word[0] == "q" && word[1] == "u" then word = word.rotate!.rotate! << "ay"
+        when is_vowel?(word[0]) then word = word << "ay"
+        when is_vowel?(word[0]) == false && is_vowel?(word[1]) == false && is_vowel?(word[2]) == false then word = word.rotate!.rotate!.rotate! << "ay"
+        when is_vowel?(word[0]) == false && is_vowel?(word[1]) == false then word = word.rotate!.rotate! << "ay"
+        when is_vowel?(word[0]) == false then word = word.rotate! << "ay"
       end
-    word.join
+          word.join
 
-  # sentence.join
 end
 
-
-
-def vowel(letter)
+def is_vowel?(letter)
     if letter == "a" || letter == "e" || letter == "i" || letter == "o" || letter == "u"
       return true
-    else
-      return false
     end
 
+    return false
 end
 
 # def consonant(letter)

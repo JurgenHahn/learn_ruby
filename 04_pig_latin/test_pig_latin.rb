@@ -28,25 +28,25 @@ class TestPigLatin < MiniTest::Test
   #   assert_equal "eatay iepay", s
   # end
 
-  # def test_translates_word_starting_with_three_consonants
-  #   assert_equal "eethray", translate("three")
-  # end
-  #
-  # def test_translates_sch_as_phoneme
-  #   s = translate("school")
-  #   assert_equal "oolschay", s
-  # end
-  #
-  # def test_translates_qu_as_phoneme
-  #   s = translate("quiet")
-  #   assert_equal "ietquay", s
-  # end
-  #
-  # def test_translates_qu_as_consonant_when_preceded_by_consonant
-  #   s = translate("square")
-  #   assert_equal "aresquay", s
-  # end
-  #
+  def test_translates_word_starting_with_three_consonants
+    assert_equal "eethray", translate("three")
+  end
+
+  def test_translates_sch_as_phoneme
+    s = translate("school")
+    assert_equal "oolschay", s
+  end
+
+  def test_translates_qu_as_phoneme
+    s = translate("quiet")
+    assert_equal "ietquay", s
+  end
+
+  def test_translates_qu_as_consonant_when_preceded_by_consonant
+    s = translate("square")
+    assert_equal "aresquay", s
+  end
+
   # def test_translates_many_words
   #   s = translate("the quick brown fox")
   #   assert_equal "ethay ickquay ownbray oxfay", s
