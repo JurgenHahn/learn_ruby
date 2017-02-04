@@ -23,10 +23,10 @@ class TestPigLatin < MiniTest::Test
     assert_equal "errychay", s
   end
 
-  # def test_translates_two_words
-  #   s = translate("eat pie")
-  #   assert_equal "eatay iepay", s
-  # end
+  def test_translates_two_words
+    s = translate("eat pie")
+    assert_equal "eatay iepay", s
+  end
 
   def test_translates_word_starting_with_three_consonants
     assert_equal "eethray", translate("three")
@@ -47,10 +47,10 @@ class TestPigLatin < MiniTest::Test
     assert_equal "aresquay", s
   end
 
-  # def test_translates_many_words
-  #   s = translate("the quick brown fox")
-  #   assert_equal "ethay ickquay ownbray oxfay", s
-  # end
+  def test_translates_many_words
+    s = translate("the quick brown fox")
+    assert_equal "ethay ickquay ownbray oxfay", s
+  end
 
   # Extra challenges:
   # Write tests and get them to pass for:

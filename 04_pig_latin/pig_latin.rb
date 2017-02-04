@@ -1,6 +1,10 @@
 def translate(s)
+  sentence = s.split(" ")
 
-     word = s.split(//)
+  new_sentence = []
+
+  sentence.each do |w|
+    word = w.split(//)
       case
         when is_vowel?(word[0]) == false && word[1] == "q" && word[2] == "u" then word = word.rotate!.rotate!.rotate! << "ay"
         when word[0] == "q" && word[1] == "u" then word = word.rotate!.rotate! << "ay"
@@ -9,8 +13,9 @@ def translate(s)
         when is_vowel?(word[0]) == false && is_vowel?(word[1]) == false then word = word.rotate!.rotate! << "ay"
         when is_vowel?(word[0]) == false then word = word.rotate! << "ay"
       end
-          word.join
-
+      new_sentence << word.join
+  end
+  new_sentence.join(" ")
 end
 
 def is_vowel?(letter)
